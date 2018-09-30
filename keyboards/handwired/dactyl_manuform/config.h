@@ -22,11 +22,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /* USB Device descriptor parameter */
 #define VENDOR_ID       0xFEED
-#define PRODUCT_ID      0x3060
+#define PRODUCT_ID      0x6969
 #define DEVICE_VER      0x0001
-#define MANUFACTURER    tshort
+#define MANUFACTURER    andrew
 // defined in subfolder
-#define DESCRIPTION     A split keyboard for the cheap makers
+#define DESCRIPTION     Very good keyboard
+#define PRODUCT		sorbet
 
 /* mouse config */
 #define MOUSEKEY_INTERVAL       20
@@ -52,9 +53,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define PERMISSIVE_HOLD
 
 /* ws2812 RGB LED */
-#define RGB_DI_PIN D3
-#define RGBLIGHT_TIMER
-#define RGBLED_NUM 12    // Number of LEDs
+//#define RGB_DI_PIN D3
+//#define RGBLIGHT_TIMER
+//#define RGBLED_NUM 12    // Number of LEDs
 
 
 /*
