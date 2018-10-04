@@ -7,8 +7,10 @@
 /* TODO:  some defines for interrupt setup */
 #define SERIAL_PIN_DDR DDRD
 #define SERIAL_PIN_PORT PORTD
+#define LED_PIN_PORT PORTB
 #define SERIAL_PIN_INPUT PIND
 #define SERIAL_PIN_MASK _BV(PD0)
+#define LED_PIN_MASK _BV(PB0)
 #define SERIAL_PIN_INTERRUPT INT0_vect
 
 #define SERIAL_SLAVE_BUFFER_LENGTH MATRIX_ROWS/2

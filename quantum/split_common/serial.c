@@ -10,6 +10,7 @@
 #include <avr/interrupt.h>
 #include <util/delay.h>
 #include <stdbool.h>
+#include "print.h"
 #include "serial.h"
 
 #ifndef USE_I2C
@@ -56,6 +57,16 @@ void serial_high(void) {
   SERIAL_PIN_PORT |= SERIAL_PIN_MASK;
 }
 
+inline static
+void led_on(void) {
+  LED_PIN_PORT &= ~LED_PIN_MASK;
+}
+
+inline static
+void led_off(void) {
+  LED_PIN_PORT |= LED_PIN_MASK;
+}
+
 void serial_master_init(void) {
   serial_output();
   serial_high();
@@ -77,6 +88,8 @@ void sync_recv(void) {
   // This shouldn't hang if the slave disconnects because the
   // serial line will float to high if the slave does disconnect.
   while (!serial_read_pin());
+  xprintf("led off");
+  led_off();
   serial_delay();
 }
 
@@ -122,6 +135,7 @@ void serial_write_byte(uint8_t data) {
 
 // interrupt handle to be used by the slave device
 ISR(SERIAL_PIN_INTERRUPT) {
+  led_on();
   sync_send();
 
   uint8_t checksum = 0;
@@ -190,6 +204,8 @@ int serial_update_buffers(void) {
   }
 
   // if the slave is present syncronize with it
+  xprintf("turning on the led");
+  led_on();
   sync_recv();
 
   uint8_t checksum_computed = 0;
