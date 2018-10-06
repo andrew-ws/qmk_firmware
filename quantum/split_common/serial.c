@@ -73,6 +73,7 @@ void serial_master_init(void) {
 }
 
 void serial_slave_init(void) {
+  led_on();
   serial_input();
 
   // Enable INT0
@@ -88,8 +89,6 @@ void sync_recv(void) {
   // This shouldn't hang if the slave disconnects because the
   // serial line will float to high if the slave does disconnect.
   while (!serial_read_pin());
-  xprintf("led off");
-  led_off();
   serial_delay();
 }
 
@@ -135,7 +134,7 @@ void serial_write_byte(uint8_t data) {
 
 // interrupt handle to be used by the slave device
 ISR(SERIAL_PIN_INTERRUPT) {
-  led_on();
+  // led_on();
   sync_send();
 
   uint8_t checksum = 0;
@@ -204,8 +203,8 @@ int serial_update_buffers(void) {
   }
 
   // if the slave is present syncronize with it
-  xprintf("turning on the led");
-  led_on();
+  // xprintf("turning on the led");
+  // led_on();
   sync_recv();
 
   uint8_t checksum_computed = 0;
