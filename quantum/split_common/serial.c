@@ -73,7 +73,6 @@ void serial_master_init(void) {
 }
 
 void serial_slave_init(void) {
-  led_on();
   serial_input();
 
   // Enable INT0
