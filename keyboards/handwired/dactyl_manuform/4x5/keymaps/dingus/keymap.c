@@ -72,8 +72,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_RAISE] = LAYOUT( \
   RGB_M_K, ____,    RGB_MOD,  RGB_RMOD,  RGB_TOG,                   KC_VOLU, ____,    KC_UP,   ____,     KC_PGUP,   \
-  MAGIC_TOGGLE_NKRO, KC_LEFT, RGB_HUI, RGB_SAI,  RGB_VAI,                    KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT, KC_PGDOWN, \
-  RGB_M_T, RGB_M_P, RGB_HUD, RGB_SAD, RGB_VAD,                    KC_VOLD, KC_SLSH, KC_BSLS, KC_QUES,  KC_PIPE,   \
+  MAGIC_TOGGLE_NKRO, KC_LEFT, RGB_HUI, RGB_SAI,  RGB_VAI,           KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT, KC_PGDOWN, \
+  RGB_M_T, RGB_M_P, RGB_HUD, RGB_SAD, RGB_VAD,                      KC_HOME, KC_PGDOWN, KC_PGUP, KC_END,  KC_PIPE,   \
         ____,    ____,                                                          ____,    ____,                \
                                    ____, ____,  ____, ____,                                                 \
                                    ____, ____,  ____, ____,                                                 \
@@ -103,7 +103,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_LOWER] = LAYOUT( \
   KC_1,    KC_2,   KC_3,    KC_4,   KC_5,                             KC_6,    KC_7,     KC_8,    KC_9,    KC_0,    \
   KC_F1,   KC_F2,  KC_F3,   KC_F4,  KC_F5,                            KC_GRV,   KC_MINS,  KC_EQL,  KC_LBRC, KC_RBRC, \
-  KC_F6,   KC_F7,  KC_F8,   KC_F9,  KC_F10,                           KC_LEFT, KC_DOWN,  KC_UP,   KC_RIGHT, KC_PGDN, \
+  KC_F6,   KC_F7,  KC_F8,   KC_F9,  KC_F10,                           KC_LEFT, KC_DOWN,  KC_UP,   KC_RIGHT, KC_BSLS, \
            KC_F11, KC_F12,                                                               ____,    ____,             \
                                              ____, ____,  ____, ____,                                               \
                                              ____, ____,  ____, ____,                                               \
